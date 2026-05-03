@@ -67,17 +67,3 @@ if st.button("Predict Result"):
         st.success("✅ **Result: Passed**")
     else:
         st.error("❌ **Result: Failed**")
-
-# --- STEP 5: VISUALIZATION ---
-st.divider()
-st.subheader("🌳 Decision Tree Visualization")
-st.write("This tree illustrates the logical thresholds used for prediction.")
-
-fig, ax = plt.subplots(figsize=(20, 10))
-plot_tree(model, 
-          feature_names=list(feature_names), 
-          class_names=['Failed', 'Passed'], 
-          filled=True, 
-          rounded=True, 
-          max_depth=3) # Depth limit for visual clarity[cite: 1]
-st.pyplot(fig)
